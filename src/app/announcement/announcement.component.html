@@ -1,4 +1,8 @@
-<mat-accordion>
+<div class="example-action-buttons">
+  <button mat-button (click)="accordion!.openAll()">Expand All</button>
+  <button mat-button (click)="accordion!.closeAll()">Collapse All</button>
+</div>
+<mat-accordion multi>
   <mat-expansion-panel *ngFor="let item of announcements | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
     <mat-expansion-panel-header>
       <mat-panel-title>

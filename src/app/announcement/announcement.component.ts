@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatAccordion } from '@angular/material/expansion';
 import { Announcement } from './announcement.model';
 import { AnnouncementService } from './announcement.service';
 
@@ -8,6 +9,8 @@ import { AnnouncementService } from './announcement.service';
   styleUrls: ['./announcement.component.scss']
 })
 export class AnnouncementComponent implements OnInit {
+
+  @ViewChild(MatAccordion) accordion?: MatAccordion;
 
   itemsPerPage: number = 10;
 
