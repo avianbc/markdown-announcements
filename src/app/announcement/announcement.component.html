@@ -18,9 +18,9 @@
   <mat-expansion-panel *ngFor="let item of announcements | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
     <mat-expansion-panel-header>
       <mat-panel-title>
-        {{item.createdBy}} @ {{item.createdDate | date:'short'}}
+        {{item.id}}) {{item.createdBy}} @ {{item.createdDate | date:'short'}}
       </mat-panel-title>
-      <mat-panel-description>Announcement #{{item.id}}</mat-panel-description>
+      <mat-panel-description></mat-panel-description>
     </mat-expansion-panel-header>
     <div markdown ngPreserveWhitespaces>{{item.markdown}}</div>
   </mat-expansion-panel>
