@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Announcement } from './announcement.model';
+import { AnnouncementService } from './announcement.service';
 
 @Component({
   selector: 'demo-announcement',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnnouncementComponent implements OnInit {
 
-  constructor() { }
+  announcements: Announcement[] = [];
+
+  constructor(private announcementService: AnnouncementService) { }
 
   ngOnInit(): void {
+    this.announcementService.getAnnouncements()
+      .then(announcements => this.announcements = announcements);
   }
-
 }

@@ -1,20 +1,21 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { MarkdownModule } from 'ngx-markdown';
 import { AnnouncementComponent } from './announcement/announcement.component';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AnnouncementComponent
+    AnnouncementComponent,
   ],
   imports: [
-    MarkdownModule.forRoot(),
+    AppRoutingModule,
     BrowserModule,
-    AppRoutingModule
+    MarkdownModule.forRoot(),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
