@@ -1,1 +1,11 @@
-<p *ngFor="let item of announcements">{{item | json}}</p>
+<mat-accordion *ngFor="let item of announcements">
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{item.createdBy}} @ {{item.createdDate | date:'short'}}
+      </mat-panel-title>
+      <mat-panel-description>Announcement #{{item.id}}</mat-panel-description>
+    </mat-expansion-panel-header>
+    <div markdown ngPreserveWhitespaces>{{item.markdown}}</div>
+  </mat-expansion-panel>
+</mat-accordion>
