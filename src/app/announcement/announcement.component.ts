@@ -9,6 +9,10 @@ import { AnnouncementService } from './announcement.service';
 })
 export class AnnouncementComponent implements OnInit {
 
+  itemsPerPage: number = 10;
+
+  currentPage: number = 1;
+
   announcements: Announcement[] = [];
 
   constructor(private announcementService: AnnouncementService) { }

@@ -1,5 +1,5 @@
-<mat-accordion *ngFor="let item of announcements">
-  <mat-expansion-panel>
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let item of announcements | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
     <mat-expansion-panel-header>
       <mat-panel-title>
         {{item.createdBy}} @ {{item.createdDate | date:'short'}}
@@ -9,3 +9,5 @@
     <div markdown ngPreserveWhitespaces>{{item.markdown}}</div>
   </mat-expansion-panel>
 </mat-accordion>
+
+<pagination-controls (pageChange)="currentPage = $event"></pagination-controls>

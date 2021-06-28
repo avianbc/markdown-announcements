@@ -4,6 +4,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MarkdownModule } from 'ngx-markdown';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { AnnouncementComponent } from './announcement/announcement.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +20,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     MarkdownModule.forRoot(),
     MatExpansionModule,
+    NgxPaginationModule,
     HttpClientModule,
   ],
   providers: [],
