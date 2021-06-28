@@ -1,7 +1,19 @@
-<div class="example-action-buttons">
+<h1>Announcements</h1>
+
+<div>
   <button mat-button (click)="accordion!.openAll()">Expand All</button>
   <button mat-button (click)="accordion!.closeAll()">Collapse All</button>
+  <mat-form-field appearance="fill">
+    <mat-label>Items to display</mat-label>
+    <mat-select [(value)]="itemsPerPage">
+      <mat-option [value]="10">10</mat-option>
+      <mat-option [value]="15">15</mat-option>
+      <mat-option [value]="25">25</mat-option>
+      <mat-option [value]="50">50</mat-option>
+    </mat-select>
+  </mat-form-field>
 </div>
+
 <mat-accordion multi>
   <mat-expansion-panel *ngFor="let item of announcements | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
     <mat-expansion-panel-header>
