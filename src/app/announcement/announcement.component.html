@@ -20,7 +20,7 @@
       <mat-panel-title>
         {{item.id}}) {{item.createdBy}} @ {{item.createdDate | date:'short'}}
       </mat-panel-title>
-      <mat-panel-description></mat-panel-description>
+      <mat-panel-description>{{item.title}}</mat-panel-description>
     </mat-expansion-panel-header>
     <div markdown ngPreserveWhitespaces>{{item.markdown}}</div>
   </mat-expansion-panel>

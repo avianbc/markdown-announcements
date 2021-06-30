@@ -12,7 +12,6 @@ export class AnnouncementService {
   getAnnouncements() {
       return this.http.get<any>('assets/announcements.json')
           .toPromise()
-          .then(res => <Announcement[]>res.data)
-          .then(data => { return data; });
+          .then(wrapper => wrapper.announcements as Announcement[]);
   }
 }
