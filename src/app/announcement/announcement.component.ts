@@ -18,7 +18,21 @@ export class AnnouncementComponent implements OnInit {
 
   announcements: Announcement[] = [];
 
-  constructor(private announcementService: AnnouncementService) { }
+  isExpanded = true;
+
+  onExpandClicked() {
+    this.accordion?.openAll();
+    this.isExpanded = true;
+  }
+
+  onCollapseClicked() {
+    this.accordion?.closeAll();
+    this.isExpanded = false;
+  }
+
+  constructor(
+    private announcementService: AnnouncementService
+  ) { }
 
   ngOnInit(): void {
     this.announcementService.getAnnouncements()
