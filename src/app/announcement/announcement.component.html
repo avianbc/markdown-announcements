@@ -1,10 +1,11 @@
 <h1>Announcements</h1>
-
-<div>
-  <button mat-button (click)="accordion!.openAll()">Expand All</button>
-  <button mat-button (click)="accordion!.closeAll()">Collapse All</button>
-  <mat-form-field appearance="fill">
-    <mat-label>Items to display</mat-label>
+<div class="row justify-between">
+  <div>
+    <button mat-stroked-button (click)="accordion!.openAll()">Expand All</button>
+    <button mat-stroked-button (click)="accordion!.closeAll()">Collapse All</button>
+  </div>
+  <mat-form-field appearance="outline">
+    <mat-label>Items per page</mat-label>
     <mat-select [(value)]="itemsPerPage">
       <mat-option [value]="10">10</mat-option>
       <mat-option [value]="15">15</mat-option>
@@ -13,9 +14,8 @@
     </mat-select>
   </mat-form-field>
 </div>
-
 <mat-accordion multi>
-  <mat-expansion-panel *ngFor="let item of announcements | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }; let i = index;">
+  <mat-expansion-panel *ngFor="let item of announcements | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }; let i = index">
     <mat-expansion-panel-header>
       <mat-panel-title>
         {{i+1}}) {{item.createdBy}} @ {{item.createdDate | date:'short'}}
@@ -26,5 +26,6 @@
     <div markdown ngPreserveWhitespaces>{{item.markdown}}</div>
   </mat-expansion-panel>
 </mat-accordion>
-
-<pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+<div class="row justify-center">
+  <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+</div>
